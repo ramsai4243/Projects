@@ -1,0 +1,32 @@
+
+<html> 
+<head> 
+<script src='jquery-1.11.1.js'></script>
+<script>
+$(document).ready(function(){
+   $("input").keyup(function()
+    {
+        $.get("ailla11a.php",{id: $('#id').val() },function(result){
+
+            $("#div1").html(result);
+
+        });
+
+    });
+
+});
+</script>
+
+
+</head> 
+<body>
+<form name="f1">
+<table border="1" width=30% ><tr><th>Enter a Sale ID</th><th><input type="text" id="id" /></th></tr>
+</table>
+
+</form>
+<div id="div1"></div>
+
+<center>
+</body> 
+</html> 

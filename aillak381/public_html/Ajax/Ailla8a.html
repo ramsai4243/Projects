@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Employee</title>
+<script>
+function addToTable()
+{
+var lastName = document.getElementById("textField").value ;
+var XMLHttpRequestObject = false;
+if (window.XMLHttpRequest)
+{
+XMLHttpRequestObject = new XMLHttpRequest();
+if (XMLHttpRequestObject.overrideMimeType)
+XMLHttpRequestObject.overrideMimeType("text/xml");
+}
+else if (window.ActiveXObject)
+{
+XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+}
+if(XMLHttpRequestObject)
+{
+XMLHttpRequestObject.open("GET", "Ailla8a.php?sid="+ Math.random() +"&qu=" + lastName );
+XMLHttpRequestObject.onreadystatechange =
+function()
+{
+if (XMLHttpRequestObject.readyState == 4 &&
+XMLHttpRequestObject.status == 200)
+{
+xmlDocument = XMLHttpRequestObject.responseXML;
+if (xmlDocument.getElementsByTagName("DATA").length == 0)
+addEmpToTable(xmlDocument);
+else
+handleError(xmlDocument);
+}
+}
+XMLHttpRequestObject.send(null);
+}
+}
+
+function addEmpToTable(documentElement)
+{
+var thisTable = document.getElementById("tableBody");
+var nodeNames = new Array("EmpNo", "EmpFirstName", "EmpLastName", "EmpPhone", "SupEmpNo", "EmpCommRate", "EmpEmail");
+employeeNode = documentElement.getElementsByTagName("Employee")[0];
+thisTable.deleteRow(1);
+var newRow = thisTable.insertRow(1);
+for (var i = 0; i < nodeNames.length; i++)
+{
+var col = newRow.insertCell(i);
+if (employeeNode.getElementsByTagName(nodeNames[i])[0].firstChild != null )
+{
+col.innerHTML = employeeNode.getElementsByTagName(nodeNames[i])[0].firstChild.nodeValue;
+}
+else
+{
+col.innerHTML = "&nbsp;";
+}
+}
+}
+
+function handleError(xmlDocument)
+{
+var thisTable = document.getElementById("tableBody");
+thisTable.deleteRow(1);
+var newRow = thisTable.insertRow(1);
+for (i = 0; i < 7; i++)
+{
+var col = newRow.insertCell(i);
+col.innerHTML = "";
+}
+}
+
+</script>
+</head>
+<body>
+<p>
+Enter Employee's Last Name: <input id = "textField" type = "text" name = "textField" onkeyup = "addToTable();">
+</P>
+<br>
+<table>
+<tbody id="tableBody">
+<tr>
+<th>EmpNo</th><th>EmpFirstName</th><th>EmpLastName</th>
+<th>EmpPhone</th><th>SupEmpNo</th><th>EmpCommRate</th><th>EmpEmail</th>
+</tr>
+<tr>
+<th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

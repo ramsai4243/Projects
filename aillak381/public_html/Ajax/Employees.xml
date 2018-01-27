@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EMPLOYEES>
+	<Employee>
+		<EmpNo>E1329594</EmpNo>
+		<EmpFirstName>Landi</EmpFirstName>
+		<EmpLastName>Santos</EmpLastName>
+		<EmpPhone>(303) 789-1234</EmpPhone>
+		<SupEmpNo>E8843211</SupEmpNo>
+		<EmpCommRate>0.02</EmpCommRate>
+		<EmpEmail>LSantos@bigco.com</EmpEmail>
+	</Employee>
+	<Employee>
+		<EmpNo>E8544399</EmpNo>
+		<EmpFirstName>Joe</EmpFirstName>
+		<EmpLastName>Jenkins</EmpLastName>
+		<EmpPhone>(303) 221-9875</EmpPhone>
+		<SupEmpNo>E8843211</SupEmpNo>
+		<EmpCommRate>0.02</EmpCommRate>
+		<EmpEmail>JJenkins@ bigco.com</EmpEmail>
+	</Employee>
+	<Employee>
+		<EmpNo>E8843211</EmpNo>
+		<EmpFirstName>Amy</EmpFirstName>
+		<EmpLastName>Tang</EmpLastName>
+		<EmpPhone>(303) 556-4321</EmpPhone>
+		<SupEmpNo>E9884325</SupEmpNo>
+		<EmpCommRate>0.04</EmpCommRate>
+		<EmpEmail>ATang@ bigco.com</EmpEmail>
+	</Employee>
+	<Employee>
+		<EmpNo>E9345771</EmpNo>
+		<EmpFirstName>Colin</EmpFirstName>
+		<EmpLastName>White</EmpLastName>
+		<EmpPhone>(303) 221-4453</EmpPhone>
+		<SupEmpNo>E9884325</SupEmpNo>
+		<EmpCommRate>0.04</EmpCommRate>
+		<EmpEmail>CWhite@ bigco.com</EmpEmail>
+	</Employee>
+	<Employee>
+		<EmpNo>E9884325</EmpNo>
+		<EmpFirstName>Thomas</EmpFirstName>
+		<EmpLastName>Johnson</EmpLastName>
+		<EmpPhone>(303) 556-9987</EmpPhone>
+		<EmpCommRate>0.05</EmpCommRate>
+		<EmpEmail>TJohnson@ bigco.com</EmpEmail>
+	</Employee>
+	<Employee>
+		<EmpNo>E9954302</EmpNo>
+		<EmpFirstName>Mary</EmpFirstName>
+		<EmpLastName>Hill</EmpLastName>
+		<EmpPhone>(303) 556-9871</EmpPhone>
+		<SupEmpNo>E8843211</SupEmpNo>
+		<EmpCommRate>0.02</EmpCommRate>
+		<EmpEmail>MHill@ bigco.com</EmpEmail>
+	</Employee>
+	<Employee>
+		<EmpNo>E9973110</EmpNo>
+		<EmpFirstName>Theresa</EmpFirstName>
+		<EmpLastName>Beck</EmpLastName>
+		<EmpPhone>(720) 320-2234</EmpPhone>
+		<SupEmpNo>E9884325</SupEmpNo>
+		<EmpEmail>TBeck@bigco.com</EmpEmail>
+	</Employee>
+</EMPLOYEES>

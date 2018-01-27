@@ -1,0 +1,56 @@
+1,Alabama,Montgomery,Birmingham,4858979,7
+2,Alaska,Juneau,Anchorage,738432,1
+3,Arizona,Phoenix,Phoenix,6828065,9
+4,Arkansas,Little Rock,Little Rock,2978204,4
+5,California,Sacramento,Los Angeles,39144818,53
+6,Colorado,Denver,Denver,5456574,7
+7,Connecticut,Hartford,Bridgeport,3590886,5
+8,Delaware,Dover,Wilmington,945934,1
+9,Florida,Tallahassee,Jacksonville,20271272,27
+10,Georgia,Atlanta,Atlanta,10214860,14
+11,Hawaii,Honolulu,Honolulu,1431603,2
+12,Idaho,Boise,Boise,1654930,2
+13,Illinois,Springfield,Chicago,12859995,18
+14,Indiana,Indianapolis,Indianapolis,6619680,9
+15,Iowa,Des Moines,Des Moines,3123899,4
+16,Kansas,Topeka,Wichita,2911641,4
+17,Kentucky,Frankfort,Louisville,4425092,6
+18,Louisiana,Baton Rouge,New Orleans,4670724,6
+19,Maine,Augusta,Portland,1329328,2
+20,Maryland,Annapolis,Baltimore,6006401,8
+21,Massachusetts,Boston,Boston,6794422,9
+22,Michigan,Lansing,Detroit,9922576,14
+23,Minnesota,St. Paul,Minneapolis,5489594,8
+24,Mississippi,Jackson,Jackson,2992333,4
+25,Missouri,Jefferson City,Kansas City,6083672,8
+26,Montana,Helena,Billings,1032949,1
+27,Nebraska,Lincoln,Omaha,1896190,3
+28,Nevada,Carson City,Las Vegas,2890845,4
+29,New Hampshire,Concord,Manchester,1330608,2
+30,New Jersey,Trenton,Newark,8958013,12
+31,New Mexico,Santa Fe,Albuquerque,2085109,3
+32,New York,Albany,New York City,19795791,27
+33,North Carolina,Raleigh,Charlotte,10042802,13
+34,North Dakota,Bismarck,Fargo,756927,1
+35,Ohio,Columbus,Columbus,11613423,16
+36,Oklahoma,Oklahoma City,Oklahoma City,3911338,5
+37,Oregon,Salem,Portland,4028977,5
+38,Pennsylvania,Harrisburg,Philadelphia,12802503,18
+39,Rhode Island,Providence,Providence,1056298,2
+40,South Carolina,Columbia,Columbia,4896146,7
+41,South Dakota,Pierre,Sioux Falls,858469,1
+42,Tennessee,Nashville,Memphis,6600299,9
+43,Texas,Austin,Houston,27469114,36
+44,Utah,Salt Lake City,Salt Lake City,2995919,4
+45,Vermont,Montpelier,Burlington,626042,1
+46,Virginia,Richmond,Virginia Beach,8382993,11
+47,Washington,Olympia,Seattle,7170351,10
+48,West Virginia,Charleston,Charleston,1844128,3
+49,Wisconsin,Madison,Milwaukee,5771337,8
+50,Wyoming,Cheyenne,Cheyenne,586107,1
+
+4567,ert,,sdf,3456y,
+77,q,,w,2,
+90,bum bum,,tun tun,10000,
+120,sws,,sws,sws,
+89,sjwswsj,,sjwswj,10000,

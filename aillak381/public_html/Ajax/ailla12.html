@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <script>
+   var XMLHttpRequestObject = false; 
+if (window.XMLHttpRequest) 
+{
+XMLHttpRequestObject = new XMLHttpRequest();
+} 
+else if (window.ActiveXObject) 
+{
+XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+function getData() 
+{ 
+if(XMLHttpRequestObject) 
+{
+var targetDiv = document.getElementById("targetDiv");
+targetDiv.innerHTML = "";
+var iname=document.getElementById('1').value;
+var nname=document.getElementById('2').value;
+var cname=document.getElementById('3').value;
+
+
+document.getElementById('1').value="";
+document.getElementById('2').value="";
+document.getElementById('3').value="";
+
+
+XMLHttpRequestObject.onreadystatechange = 
+function() 
+{ 
+if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) 
+{ 
+targetDiv.innerHTML = XMLHttpRequestObject.responseText;
+} 
+} 
+var url="ailla12a.php?ID="+iname+"&name="+nname+"&category="+cname;
+XMLHttpRequestObject.open("GET", url, true); 
+XMLHttpRequestObject.send(); 
+}
+}
+
+
+
+function getData2() 
+{ 
+if(XMLHttpRequestObject) 
+{
+var targetDiv = document.getElementById("targetDiv");
+targetDiv.innerHTML = "";
+var targetDiv = document.getElementById("targetDiv");
+targetDiv.innerHTML = "";
+var iname=document.getElementById('1').value;
+var nname=document.getElementById('2').value;
+var cname=document.getElementById('3').value;
+
+
+document.getElementById('1').value="";
+document.getElementById('2').value="";
+document.getElementById('3').value="";
+console.log(iname, cname, nname);
+
+var url="ailla12c.php?ID="+iname+"&name="+nname+"&category="+cname;
+XMLHttpRequestObject.open("GET", url); 
+XMLHttpRequestObject.onreadystatechange = 
+function() 
+{ 
+if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) 
+{ 
+targetDiv.innerHTML = XMLHttpRequestObject.responseText;
+} 
+} 
+XMLHttpRequestObject.send(null); 
+}
+}
+
+function getData1() 
+{ 
+if(XMLHttpRequestObject) 
+{
+var targetDiv = document.getElementById("targetDiv");
+targetDiv.innerHTML = "";
+
+var url="ailla12b.php?ID="+iname+"&name="+nname+"&category="+cname;
+
+XMLHttpRequestObject.open("GET", url); 
+XMLHttpRequestObject.onreadystatechange = 
+function() 
+{ 
+if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) 
+{ 
+targetDiv.innerHTML = XMLHttpRequestObject.responseText;
+} 
+} 
+XMLHttpRequestObject.send(null); 
+}
+}
+
+
+   </script>
+<script src="jquery-1.11.1.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({url: "ailla12b.php", success: function(result){
+            $("#targetDiv").html(result);
+        }});
+    });
+});
+</script>
+  </head>
+ <body bgcolor="blue">
+  
+  <font style="font-size:40px;color:white">VK Stories</font>
+ <h2>Welcome to hear the stories <p>
+   
+    Name:<input type="text" id="2" name="nname" required /><br>
+    ID: <input type="text" id="1" name="iname" required /><br>
+    Categories:<input type="text" id="3" name="cname" required /><br>
+   
+   <input type="button" value="book Insert" onClick="getData()"/> 
+   <input type="button" value="book update" onClick="getData2()" />
+	<button>Load table</button>
+   <div id="targetDiv"></div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+<head> 
+<script>
+var XMLHttpRequestObject = false; 
+if (window.XMLHttpRequest) 
+{
+XMLHttpRequestObject = new XMLHttpRequest();
+XMLHttpRequestObject.overrideMimeType("text/xml");
+} 
+else if (window.ActiveXObject) 
+{
+XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+}
+function getData(dataSource, divID) 
+{ 
+	var cityid=document.city.cityid.value;
+	var url=dataSource+"?id="+cityid;
+	if(XMLHttpRequestObject) 
+{
+var obj = document.getElementById(divID); 
+obj.innerHTML ="";
+XMLHttpRequestObject.open("GET", url); 
+XMLHttpRequestObject.onreadystatechange = 
+function() 
+{ 
+if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) 
+{ 
+xmlDocument = XMLHttpRequestObject.responseXML;
+selection = xmlDocument.getElementsByTagName("selectt");
+newDivValue = "<ul>";
+for (i = 0; i < selection.length; i++)
+{
+newDivValue += "<li>" + selection[i].firstChild.data + "</li>";
+}
+newDivValue += "</ul>";
+obj.innerHTML = newDivValue;
+} 
+} 
+XMLHttpRequestObject.send(null); 
+}}
+</script>
+</head> 
+<body>
+
+Select a city: 
+<br>
+<form name="city" method="get">
+<select name="cityid">
+	<option value="select">Select city</option>
+	<option value="New_Mexico " >New Mexico</option>
+	<option value="Nevada">Nevada</option>
+	<option value="Colorado">Colorado</option>
+	<option value="Oregon">Oregon</option>
+	<option value="Montana">Montana</option>
+	
+</select>
+<br>
+<br>
+<input type = "button" value = "submit" onclick = "getData('ailla5b.php', 'targetDiv')"> 
+
+</form>
+<div id="targetDiv">
+
+<p>State Details : </p> 
+</div> 
+</body> 
+
+</html>
+ 

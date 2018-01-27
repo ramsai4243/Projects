@@ -1,0 +1,106 @@
+﻿<html>
+<head>
+<script>
+
+function getdata()
+{
+	var cid = document.f1.customerSelect.value;
+	var XMLHttpRequestObject = false;
+	if (window.XMLHttpRequest)
+	{
+		XMLHttpRequestObject = new XMLHttpRequest();
+	}
+	else if (window.ActiveXObject)
+	{
+		XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	if(XMLHttpRequestObject)
+	{
+		var url = "ailla7a.php?id="+cid;
+		XMLHttpRequestObject.open("GET", url);
+		XMLHttpRequestObject.onreadystatechange =
+		function()
+		{
+			if (XMLHttpRequestObject.readyState == 4 &&
+			XMLHttpRequestObject.status == 200)
+				{
+					eval(XMLHttpRequestObject.responseText);
+				}
+		}
+		XMLHttpRequestObject.send(null);
+	}
+
+}
+
+
+function not_there()
+{
+	var tDiv1 = document.getElementById('targetDiv');
+ 	var trow = tDiv1.getElementsByTagName('tr');
+ 	var rcount = trow.length;
+ 	for (var x = rcount - 1; x > 0; x--)
+ 	{
+ 		tDiv1.removeChild(trow[x]);
+ 	}
+}
+
+
+function there(customerID,saleID,saleDate)
+{
+ var targetDiv = document.getElementById("targetDiv");
+ if (customerID.length != 0)
+ {
+ 
+ 	var tDiv1 = document.getElementById('targetDiv');
+ 	var trow = tDiv1.getElementsByTagName('tr');
+ 	var rcount = trow.length;
+ 	for (var x = rcount - 1; x > 0; x--)
+ 	{
+ 		tDiv1.removeChild(trow[x]);
+ 	}
+ 	for (var li = 0; li < customerID.length; li++)
+ 	{
+ 		var newRow = document.createElement("tr");
+var col1 = document.createElement("td");
+var col2 = document.createElement("td");
+var col3 = document.createElement("td");
+
+var newTextNode1 = document.createTextNode(customerID[li]);
+var newTextNode2 = document.createTextNode(saleID[li]);
+var newTextNode3 = document.createTextNode(saleDate[li]);
+
+col1.appendChild(newTextNode1);
+col2.appendChild(newTextNode2);
+col3.appendChild(newTextNode3);
+
+newRow.appendChild(col1);
+newRow.appendChild(col2);
+newRow.appendChild(col3);
+ 		targetDiv.appendChild(newRow);
+ 	}
+ }
+
+}
+
+
+
+</script>
+
+</head>
+
+<body>
+<form name="f1">
+<H3> Choose CustomerID <input type="text" name="customerSelect" onkeyup="getdata()" />  </H3>
+</form>
+<table border='2' width="50%">
+<tbody id ="targetDiv">
+
+<tr>
+<th>Customer ID</th><th>Sale ID</th><th>Sale Date</th>
+
+
+</tr>
+</tbody>
+</table>
+</body>
+</html>

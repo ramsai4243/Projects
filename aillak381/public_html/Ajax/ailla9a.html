@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Employee</title>
+<script type = "text/javascript" src = "ajaxutility.js"></script>
+<script>
+function processResponse(xmlDocument)
+{
+if (xmlDocument.getElementsByTagName("DATA").length == 0)
+addEmpToTable(xmlDocument);
+else
+handleError(xmlDocument);
+}
+
+function addEmpToTable(documentElement)
+{
+var thisTable = document.getElementById("tableBody");
+var nodeNames = new Array("EmpNo", "EmpFirstName", "EmpLastName", "EmpPhone", "SupEmpNo", "EmpCommRate", "EmpEmail");
+employeeNode = documentElement.getElementsByTagName("Employee")[0];
+thisTable.deleteRow(1);
+var newRow = thisTable.insertRow(1);
+for (var i = 0; i < nodeNames.length; i++)
+{
+var col = newRow.insertCell(i);
+if (employeeNode.getElementsByTagName(nodeNames[i])[0].firstChild != null )
+{
+col.innerHTML = employeeNode.getElementsByTagName(nodeNames[i])[0].firstChild.nodeValue;
+}
+else
+{
+col.innerHTML = "&nbsp;";
+}
+}
+}
+
+function handleError(xmlDocument)
+{
+var thisTable = document.getElementById("tableBody");
+thisTable.deleteRow(1);
+var newRow = thisTable.insertRow(1);
+for (i = 0; i < 7; i++)
+{
+var col = newRow.insertCell(i);
+col.innerHTML = "";
+}
+}
+
+</script>
+</head>
+<body>
+<p>
+Enter Employee's Last Name: <input id = "textField" type = "text" name = "textField" onkeyup = "getXml('ailla9a.php?qu='
++this.value,processResponse);">
+</p>
+<br>
+<table>
+<tbody id="tableBody">
+<tr>
+<th>Emp No</th><th>Emp First Name</th><th>Emp Last Name</th>
+<th>Emp Phone</th><th>Sup Emp No</th><th>Emp Comm Rate</th><th>Emp Email</th>
+</tr>
+<tr>
+<th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

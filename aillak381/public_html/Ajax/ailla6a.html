@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<script>
+var XMLHttpRequestObject = false;
+if (window.XMLHttpRequest)
+	{
+		XMLHttpRequestObject = new XMLHttpRequest();
+	}
+
+	else if (window.ActiveXObject)
+	{
+		XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+function getData(dataSource)
+{
+	if(XMLHttpRequestObject)
+	{
+		var getinfo = document.getElementById("getinfo");
+		getinfo.innerHTML = "";
+		XMLHttpRequestObject.open("GET", dataSource);
+		XMLHttpRequestObject.onreadystatechange =
+	function()
+	{
+		if (XMLHttpRequestObject.readyState == 4 &&	XMLHttpRequestObject.status == 200)
+		{
+			eval(XMLHttpRequestObject.responseText);
+		}
+	}
+	XMLHttpRequestObject.send(null);
+	}
+}
+ 
+
+function button1()
+{
+	var getinfo = document.getElementById("getinfo");
+	getinfo.innerHTML = "Alabama is the 30th-most extensive and the 24th-most populous of the U.S. states. ";
+}
+
+ 
+function button2()
+{
+	var getinfo = document.getElementById("getinfo");
+	getinfo.innerHTML = "Alaska is the largest state in the United States by area, the 3rd least populous and the least densely populated of the 50 United States";
+}
+
+ 
+function button3()
+{
+	var getinfo = document.getElementById("getinfo");
+	getinfo.innerHTML = "Arizona is the sixth largest and the 14th most populous of the 50 states. Its capital and largest city is Phoenix. Arizona is one of the Four Corners states. It has borders with New Mexico, Utah, Nevada, California, and Mexico, and one point in common with the southwestern corner of Colorado";
+}
+
+
+function button4()
+{
+	var getinfo = document.getElementById("getinfo");
+	getinfo.innerHTML = "Arkansas  is the 29th largest by area and the 33rd most populous of the 50 United States. The capital and most populous city is Little Rock, located in the central portion of the state, a hub for transportation, business, culture, and government. ";
+}
+
+function button5()
+{
+	var getinfo = document.getElementById("getinfo");
+	getinfo.innerHTML = "California in the United States and the third most extensive by area. Located on the western (Pacific Ocean) coast of the U.S., California is bordered by the other U.S. states of Oregon, Nevada, and Arizona and shares an international border with the Mexican state of Baja California.";
+}
+
+</script>
+</head>
+<body>
+
+<p>States : </p>
+
+<form>
+
+<input type = "button" value = "Alabama" onclick = "getData('ailla6a.php?button=1','case1')">
+<input type = "button" value = "Alaska" onclick = "getData('ailla6a.php?button=2','case2')">
+<input type = "button" value = "Arizona" onclick = "getData('ailla6a.php?button=3','case3')">
+<input type = "button" value = "Arkansas" onclick = "getData('ailla6a.php?button=4','case4')">
+<input type = "button" value = "California" onclick = "getData('ailla6a.php?button=5','case5')">
+
+</form>
+
+<div id="getinfo">
+
+</div>
+</body>
+</html>

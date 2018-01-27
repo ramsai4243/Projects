@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<script >
+
+var XMLHttpRequestObject = false; 
+
+if (window.XMLHttpRequest)
+{
+	XMLHttpRequestObject = new XMLHttpRequest();
+} 
+else if (window.ActiveXObject)
+{
+	XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+}
+function getData()
+{
+	if(XMLHttpRequestObject) 
+	{
+		var city = document.getElementById("city").value; 
+		var url="ailla5a.php?id="+city;
+
+		XMLHttpRequestObject.open("GET", url); 
+
+		XMLHttpRequestObject.onreadystatechange = 
+
+		function() 
+		{ 
+			if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) 
+			{	 	
+				document.getElementById("targetDiv").innerHTML = XMLHttpRequestObject.responseText; 
+			} 
+
+		} 
+
+ 		XMLHttpRequestObject.send(null); 
+
+	}
+
+}
+
+</script>
+</head>
+  <body>
+  <form>
+   <p>
+ Enter a City: <input type = text id="city"></p>
+    <p> <input type = button value= Getinfo onclick="getData()"> </p>
+   </form>
+   <div id="targetDiv">
+   <p> </p>
+   
+   </body>
+    </html>

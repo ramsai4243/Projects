@@ -1,0 +1,89 @@
+<html> 
+<head> 
+<script>
+	function getData(dataSource) 
+      { 
+        	var XMLHttpRequestObject = false; 
+
+        	if (window.XMLHttpRequest) 
+		{
+       		XMLHttpRequestObject = new XMLHttpRequest();
+       	} 
+
+		else if (window.ActiveXObject) 
+		{
+       		XMLHttpRequestObject = new ActiveXObject("Microsoft.XMLHTTP");
+       	}
+       	if(XMLHttpRequestObject) 
+		{
+       		XMLHttpRequestObject.open("GET", dataSource); 
+			XMLHttpRequestObject.onreadystatechange = 
+			function() 
+   			{ 
+   				if (XMLHttpRequestObject.readyState == 4 && XMLHttpRequestObject.status == 200) 
+				{ 
+       				   eval(XMLHttpRequestObject.responseText);
+   				} 
+   			} 
+   		XMLHttpRequestObject.send(null); 
+       	}
+
+      }
+
+   function test() 
+   {
+	  	var input = document.getElementById("saleId");
+       	if (input.value) 
+		{
+      		getData("ailla6b.php?id=" + input.value);
+       	} 
+       	else 
+		{
+      		var targetDiv = document.getElementById("targetDiv");
+       		targetDiv.innerHTML = "<div></div>";
+       	}
+
+    }
+   function there(saleIDs, saleDate, customerIDs ) 
+   {
+      	var loopIndex;
+	 	var data =" ";
+       	if (saleIDs.length != 0) 
+		{
+	   		data = "<table border='2'><tr><th>Sale ID</th><th>Sale Date</th><th>Customer ID</th></tr>";
+          		for (var loopIndex = 0; loopIndex < saleIDs.length; loopIndex++) 
+				{
+           			data += "<tr><td>" + saleIDs[loopIndex] + "</td>" + "<td>" + saleDate[loopIndex] + "</td>" + "<td>" + customerIDs[loopIndex] + "</td></tr>";
+          		}
+        }
+
+        	data += "</table>";
+        	var targetDiv = document.getElementById("targetDiv");
+        	targetDiv.innerHTML = data;
+    }
+
+function not_there()
+{
+	var data ="Sale data not found";
+	targetDiv.innerHTML = "<div></div>";
+	windows.alert("database not found")
+}
+
+</script>
+</head> 
+
+<body>
+
+<p>Enter ID: 
+
+<input type = "text" id="saleId" name = "saleId">
+<input type = "button" value = "get data" onclick = "test()">
+
+</p>
+
+<div id = "targetDiv"></div>
+
+</body> 
+
+</html>
+
